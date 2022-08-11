@@ -5,7 +5,7 @@ import Peer from 'simple-peer'
 const SocketContext = createContext()
 // const socket = io("http://localhost:5001"
 const socket = io('https://video-call-server-pi.vercel.app', {
-    transports:['websocket', 'polling']
+    transports:['websocket']
 });
 
 // socket.on("connect_error", () => {
