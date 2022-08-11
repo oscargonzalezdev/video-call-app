@@ -5,7 +5,8 @@ import Peer from 'simple-peer'
 const SocketContext = createContext()
 // const socket = io('http://localhost:5001')
 // const socket = io('https://video-call-server-pi.vercel.app')
-const socket = io("https://video-call-server-pi.vercel.app", {
+// only in the browser when the page is served over https (will not work in Node.js)
+const socket = io("video-call-server-pi.vercel.app", {
   transports: ["websocket", "polling"] // use WebSocket first, if available
 });
 
