@@ -1,9 +1,15 @@
-import './App.css';
+import Notifications from "./components/Notifications";
+import Options from "./components/Options";
+import VideoPlayer from "./components/VideoPlayer";
 
 function App() {
+
   return (
-    <div>
-      <h1>Hello World!</h1>
+    <div >
+      <VideoPlayer />
+      <Options>
+        <Notifications/>
+      </Options>
     </div>
   );
 }
