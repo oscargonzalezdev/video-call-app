@@ -3,15 +3,8 @@ import { io } from 'socket.io-client'
 import Peer from 'simple-peer'
 
 const SocketContext = createContext()
-// const socket = io("http://localhost:5001"
-const socket = io('https://video-call-app-v1.herokuapp.com', {
-    secure: true
-});
-
-// socket.on("connect_error", () => {
-//     // revert to classic upgrade
-//     socket.io.opts.transports = ["polling", "websocket"];
-//   });
+// set server url
+const socket = io('https://video-call-app-v1.herokuapp.com');
 
 const ContextProvider = ({ children }) => {
     const [stream, setStream] = useState(null)
