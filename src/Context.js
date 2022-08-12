@@ -10,7 +10,7 @@ const SocketContext = createContext()
 const socket = io('https://video-call-app-v1.herokuapp.com')
 
 const ContextProvider = ({ children }) => {
-    const [stream, setStream] = useState(null)
+    const [stream, setStream] = useState({})
     const [me, setMe] = useState('')
     const [call, setCall] = useState({})
     const [callAccepted, setCallAccepted] = useState(false)
@@ -33,7 +33,7 @@ const ContextProvider = ({ children }) => {
         socket.on('callUser', ({ from, name: callerName, signal }) => {
             setCall({ isReceivedCall: true, from, name: callerName, signal })
         })
-    }, [])
+    }, [stream])
 
     const answerCall = () => {
         setCallAccepted(true)
