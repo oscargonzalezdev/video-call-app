@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+
+.container {
+    background-image: linear-gradient(to top left, #8360c3b7, #2ebf91c2);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.login {
+    width: 400px;
+    background-color: #ccc;
+    padding: 3rem;
+    border-radius: 10px;
+}
+.login input {
+    width: 100%;
+}
+
+.logo {
+    font-family: 'Coiny', cursive;
+    font-size: 50px;
+    text-align: center;
+    text-shadow: 0 1px 2px #000000a0;
+}
+
+.logo span {
+    display: inline-block;
+    color: #00ae9d;
+    transform-origin: 50% 70%;
+}
+
+.logo span:nth-child(2n) {
+    color: #ffb700;
+}
+
+.logo span:nth-child(1) {
+    animation: flipper 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) both, fadeIn 1s both;
+}
+
+.logo span:nth-child(2) {
+    animation: flipper 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) .2s both, fadeIn 1s both;
+}
+
+.logo span:nth-child(3) {
+    animation: flipper 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) .4s both, fadeIn 1s both;
+}
+
+.logo span:nth-child(4) {
+    animation: flipper 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) .6s both, fadeIn 1s both;
+}
+
+@keyframes flipper {
+    from {
+        transform: rotateX(90deg);
+    }
+
+    to {
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    ;
+
+    to {
+        opacity: 1
+    }
+
+    ;
+}
