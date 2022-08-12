@@ -3,18 +3,21 @@ import { io } from 'socket.io-client'
 import Peer from 'simple-peer'
 
 const SocketContext = createContext()
-// set server url
-const socket = io('https://video-call-app-v1.herokuapp.com');
+// set local server url
+// const socket = io('http://localhost:5001');
+
+// set remote server url
+const socket = io('https://video-call-app-v1.herokuapp.com')
 
 const ContextProvider = ({ children }) => {
-    const [stream, setStream] = useState()
+    const [stream, setStream] = useState(null)
     const [me, setMe] = useState('')
     const [call, setCall] = useState({})
     const [callAccepted, setCallAccepted] = useState(false)
     const [callEnded, setCallEnded] = useState(false)
     const [name, setName] = useState('')
 
-    const myVideo = useRef()
+    const myVideo = useRef({})
     const userVideo = useRef()
     const connectionRef = useRef()
 
