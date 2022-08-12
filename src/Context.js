@@ -7,14 +7,14 @@ const SocketContext = createContext()
 const socket = io('https://video-call-app-v1.herokuapp.com');
 
 const ContextProvider = ({ children }) => {
-    const [stream, setStream] = useState(null)
+    const [stream, setStream] = useState()
     const [me, setMe] = useState('')
     const [call, setCall] = useState({})
     const [callAccepted, setCallAccepted] = useState(false)
     const [callEnded, setCallEnded] = useState(false)
     const [name, setName] = useState('')
 
-    const myVideo = useRef({})
+    const myVideo = useRef()
     const userVideo = useRef()
     const connectionRef = useRef()
 
