@@ -18,7 +18,7 @@ const ContextProvider = ({ children }) => {
     const [name, setName] = useState('')
 
     const myVideo = useRef({})
-    const userVideo = useRef()
+    const userVideo = useRef({})
     const connectionRef = useRef()
 
     useEffect(() => {
