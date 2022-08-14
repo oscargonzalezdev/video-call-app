@@ -16,23 +16,18 @@ const ContextProvider = ({ children }) => {
     const [callAccepted, setCallAccepted] = useState(false)
     const [callEnded, setCallEnded] = useState(false)
     const [name, setName] = useState('')
-
+    const [isLogged, setIsLogged] = useState(false)
     const myVideo = useRef({})
     const userVideo = useRef({})
     const connectionRef = useRef()
 
-    useEffect(() => {
-        navigator.mediaDevices.getUserMedia({ video: true, audio: true })
-            .then((currentStream) => {
-                setStream(currentStream);
-                myVideo.current.srcObject = currentStream;
-            });
-
+    useEffect(() => {         
         socket.on('me', (id) => setMe(id));
 
         socket.on('callUser', ({ from, name: callerName, signal }) => {
             setCall({ isReceivedCall: true, from, name: callerName, signal })
         })
+
     }, [])
 
     const answerCall = () => {
@@ -79,7 +74,7 @@ const ContextProvider = ({ children }) => {
     }
 
     return (
-        <SocketContext.Provider value={{ call, callAccepted, myVideo, userVideo, stream, name, setName, callEnded, me, callUser, leaveCall, answerCall }}>
+        <SocketContext.Provider value={{ setCall, setMe, setStream, call, callAccepted, myVideo, userVideo, stream, name, setName, callEnded, me, callUser, leaveCall, answerCall, isLogged, setIsLogged }}>
             {children}
         </SocketContext.Provider>
     )
