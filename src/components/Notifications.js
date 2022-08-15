@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react'
 
 const Notifications = () => {
-  const { answerCall, call, setCall, callAccepted, setCallAccepted, callEnded, userVideo } = useContext(SocketContext)
+  const { answerCall, call, setCall } = useContext(SocketContext)
   const [openModal, setOpenModal] = useState(true)
 
   const aceptCall = () => {
@@ -40,9 +40,6 @@ const Notifications = () => {
         </div>
       )
       }
-
-
-
     </>
   )
 }

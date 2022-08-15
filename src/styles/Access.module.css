@@ -1,16 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
 
-.container {
-    background-image: linear-gradient(to top left, #8360c3b7, #2ebf91c2);
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-}
-
 .login {
     width: 400px;
     background-color: #ccc;
