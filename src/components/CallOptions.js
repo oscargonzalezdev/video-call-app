@@ -9,8 +9,8 @@ function CallOptions() {
   const { leaveCall } = useContext(SocketContext)
 
   return (
-    <div>
-      <IconButton onClick={leaveCall} aria-label='End Call' icon={<FcEndCall size='lg' />} /> 
+    <div className='call-options'>
+      <IconButton bg='#ccc' borderRadius={50} onClick={leaveCall} aria-label='End Call' icon={<FcEndCall size='lg' />} /> 
     </div>
   )
 }

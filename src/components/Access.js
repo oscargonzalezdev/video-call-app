@@ -5,7 +5,6 @@ import { SocketContext } from "../Context"
 import Notifications from "./Notifications"
 import Options from "./Options"
 import VideoPlayer from "./VideoPlayer"
-import CallOptions from './CallOptions'
 
 function Access() {
 
@@ -23,8 +22,8 @@ function Access() {
             </div>
             <Box width='300px' borderRadius='lg' padding='20px'>
               <form className='login-form' onSubmit={() => setIsLogged(true)} >
-                <Input fontWeight='bold' bg='#ccc' required  placeholder='Name' value={name} onChange={(e) => { setName(e.target.value) }} />
-                <Button type="submit" colorScheme='teal' width='100%' marginTop='20px'> Start </Button>
+                <Input fontWeight='bold' bg='#eaeaea' required  placeholder='Name' value={name} onChange={(e) => { setName(e.target.value) }} />
+                <Button type="submit" fontWeight='bold' colorScheme='teal' width='100%' marginTop='20px'> Start </Button>
               </form>
             </Box>
           </div>
@@ -34,10 +33,7 @@ function Access() {
             {
               callAccepted && !callEnded
                 ? (
-                  <>
-                  <CallOptions />
                   <VideoPlayer user='receiver' />
-                  </>
                 ) : (
                   <Options />
                 )
