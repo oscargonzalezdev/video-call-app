@@ -4,9 +4,7 @@ function App() {
 
   return (
     <div>
-      <main >
         <Access />
-      </main>
     </div>
   );
 }
